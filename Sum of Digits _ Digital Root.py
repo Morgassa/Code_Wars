@@ -20,5 +20,7 @@ def reduz(lista):
 
 #CODEWARS SOLUTION
 
-def digital_root(n):
+def digital_root_CW(n):
     return n if n < 10 else digital_root(sum(map(int,str(n))))
+
+print(digital_root_CW())

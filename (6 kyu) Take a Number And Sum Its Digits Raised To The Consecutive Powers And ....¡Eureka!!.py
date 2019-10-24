@@ -18,7 +18,7 @@ def sum_dig_pow(a, b):
                 lista_resp.append(resp)
     return lista_resp
 
-'''CODEWAR BEST PRACTICISES AND CLEAVER'''
+'''CODEWAR BEST PRACTICISES AND CLEVER'''
 
 def filter_func(a):
     return sum(int(d) ** (i+1) for i, d in enumerate(str(a))) == a

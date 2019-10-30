@@ -13,7 +13,7 @@ def order(sentence):
                 # print(letter)
     for number in range(1, len(x)+1):
         listinha.append(dict[str(number)])
-    return ' '.join(listinha),'ok'
+    return str(' '.join(listinha))
 
 
 

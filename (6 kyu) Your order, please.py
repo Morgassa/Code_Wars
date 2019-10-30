@@ -1,18 +1,19 @@
 def order(sentence):
-    listinha=''
+    listinha=[]
     dict={}
     x = sentence.split()
-    print(len(x))
+    #print(len(x))
     for word in sentence.split():
-        #print(word)
+        # print(word)
         for letter in word:
             if letter.isdigit():
-                dict[letter] = [word]
+                dict[letter] = word
             else:
+                continue
                 # print(letter)
     for number in range(1, len(x)+1):
-        print(dict[str(number)])
-    print(listinha)
+        listinha.append(dict[str(number)])
+    return ' '.join(listinha),'ok'
 
 
 
@@ -24,6 +25,6 @@ def order(sentence):
 
 
 
-# print (order("is2 Thi1s T4est 3a"))                    # "Thi1s is2 3a T4est")
-# print (order("4of Fo1r pe6ople g3ood th5e the2"))      # "Fo1r the2 g3ood 4of th5e pe6ople")
+print (order("is2 Thi1s T4est 3a"))                    # "Thi1s is2 3a T4est")
+print (order("4of Fo1r pe6ople g3ood th5e the2"))      # "Fo1r the2 g3ood 4of th5e pe6ople")
 print (order(""))                                      # "")

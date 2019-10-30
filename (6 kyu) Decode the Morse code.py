@@ -43,9 +43,6 @@ def decodeMorse(morse_code):
     message = ''.join(translated_code)
     return message
 
-
-print (decodeMorse('.- .'))
-
 # !!! CODEWAR RESOLUTIONS !!!
 
 def decodeMorse(morseCode):

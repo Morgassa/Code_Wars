@@ -3,26 +3,36 @@ def solution(args):
     i = 0
     while i < len_arsgs:
         low = args[i]
-        '''
-        Enquanto o contador 'i' for um caracter menor que o tamanho da lista e
-        o valor do argumento atual +1 for igual ao proximo.
-        Soma-se 1 ao contador 'i'.        
-        '''
+
+        # Enquanto o contador 'i' for um caracter menor que o tamanho da lista e
+        # o valor do argumento atual +1 for igual ao proximo.
+        # Soma-se 1 ao contador 'i'.
+
         while i < len_arsgs-1 and args[i]+1 == args[i+1]:
             i+=1
-        '''
-        Ao quebrar a sequencia numerica a variavel 'hi' passa a ser o ultimo numero positivo verificado.
-        '''
+
+        # Ao quebrar a sequencia numerica a variavel 'hi' passa a ser o ultimo numero
+        # da sequencia verificado.
+
         hi = args[i]
-        '''
-        Se ouver algum numero entro o valor do 'hi' e do 'low' yield guarda os
-        dois valores posicionados nas extremidadas da sequanci numerica.
-        '''
+
+        # Se ouver algum numero entre o valor do 'hi' e do 'low' yield guarda apenas
+        # os dois valores posicionados nas extremidadas da sequancia numerica. O maior
+        # e o menor.
+
         if hi - low >= 2:
             yield (low, hi)
+
+        # Se os números forem apenas consecutivos mas são apenas dois, 'hi' e 'low' são
+        # quardados separadamente.
+
         elif hi - low == 1:
             yield (low,)
             yield (hi,)
+
+        # Não sendo valores consecutivos são desconsiderados, sendo assim não tem o porque
+        # separa-los em 'hi' e 'low'.
+
         else:
             yield (low,)
         i+=1

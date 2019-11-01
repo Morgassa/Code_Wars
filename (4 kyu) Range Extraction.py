@@ -1,27 +1,37 @@
 def solution(args):
-    resp_list=[]
-    rep=[]
-    rep.append(args[0])
-    for a, b in zip(args, range(0,len(args))):
-        # print(a,b)
-        print(args.index(a), b)
-        # if rep[-1]+1 == args[b] and rep[-1]+2 == args[b+1]:
-        #     rep.append(a)
-        # rep.append(a)
-        # print(rep[-1], args[b+1], args[b+2])
+    len_arsgs = len(args)
+    i = 0
+    while i < len_arsgs:
+        low = args[i]
+        '''
+        Enquanto o contador 'i' for um caracter menor que o tamanho da lista e
+        o valor do argumento atual +1 for igual ao proximo.
+        Soma-se 1 ao contador 'i'.        
+        '''
+        while i < len_arsgs-1 and args[i]+1 == args[i+1]:
+            i+=1
+        '''
+        Ao quebrar a sequencia numerica a variavel 'hi' passa a ser o ultimo numero positivo verificado.
+        '''
+        hi = args[i]
+        '''
+        Se ouver algum numero entro o valor do 'hi' e do 'low' yield guarda os
+        dois valores posicionados nas extremidadas da sequanci numerica.
+        '''
+        if hi - low >= 2:
+            yield (low, hi)
+        elif hi - low == 1:
+            yield (low,)
+            yield (hi,)
+        else:
+            yield (low,)
+        i+=1
 
-        # print(a,b)
+def printtr(ranges):
+    print(','.join((('%i-%i' % r) if len(r) == 2 else '%i' % r) for r in ranges))
 
-    print(rep)
-    print(args)
-    return 'o'
-    # your code here
-
-
-
-
-
-
-
-#solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20])
-solution([-3, -2, -1, 2, 10, 15, 16, 18, 19, 20])
+if __name__ == '__main__':
+    for lst in [[-8, -7, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7,
+                 8, 9, 10, 11, 14, 15, 17, 18, 19, 20],[6,6,7,9,10,11]]:
+        #print(list(solution(lst)))
+        printtr(solution(lst))

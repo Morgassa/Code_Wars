@@ -30,7 +30,7 @@ def solution(args):
             yield (low,)
             yield (hi,)
 
-        # Não sendo valores consecutivos são desconsiderados, sendo assim não tem o porque
+        # Não havendo valor consecutivo, sendo assim não tem o porque
         # separa-los em 'hi' e 'low'.
 
         else:
@@ -38,10 +38,27 @@ def solution(args):
         i+=1
 
 def printtr(ranges):
-    print(','.join((('%i-%i' % r) if len(r) == 2 else '%i' % r) for r in ranges))
+    ll=[]
+    count=0
+    for r in ranges:
+        count+=1
+        if len(r) == 2:
+            sep='~'
+            print(r[0], r[1])
+            ll.append([('{} ~> {}'.format(r[0], r[1]))])
+            # ll.append(int(r[0])+sep+int(r[1]))
+        else:
+            ll.append(('{}'.format(r[0])))
+    print(ll)
+
+
+
+#
+# def printtr(ranges):
+#     print(','.join((('%i-%i' % r) if len(r) == 2 else '%i' % r) for r in ranges))
 
 if __name__ == '__main__':
     for lst in [[-8, -7, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7,
-                 8, 9, 10, 11, 14, 15, 17, 18, 19, 20],[6,6,7,9,10,11]]:
+                 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]]:
         #print(list(solution(lst)))
         printtr(solution(lst))

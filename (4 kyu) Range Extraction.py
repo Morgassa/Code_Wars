@@ -1,4 +1,4 @@
-def solution(args):
+def generator(args):
     len_arsgs = len(args)
     i = 0
     while i < len_arsgs:
@@ -37,28 +37,34 @@ def solution(args):
             yield (low,)
         i+=1
 
-def printtr(ranges):
-    ll=[]
+def solution(ranges):
+    ddd = generator(ranges)
+    ls=''
     count=0
-    for r in ranges:
+    for r in ddd:
         count+=1
         if len(r) == 2:
-            sep='~'
-            print(r[0], r[1])
-            ll.append([('{} ~> {}'.format(r[0], r[1]))])
-            # ll.append(int(r[0])+sep+int(r[1]))
+            ls+=(''.join(('{}-{},'.format(r[0], r[1]))))
         else:
-            ll.append(('{}'.format(r[0])))
-    print(ll)
+            ls+=(''.join(('{},'.format(r[0]))))
+    return (ls[:-1])
 
 
 
-#
-# def printtr(ranges):
-#     print(','.join((('%i-%i' % r) if len(r) == 2 else '%i' % r) for r in ranges))
+## CODEWARS RESOLUTION ##
 
-if __name__ == '__main__':
-    for lst in [[-8, -7, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7,
-                 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]]:
-        #print(list(solution(lst)))
-        printtr(solution(lst))
+def solution(args):
+    out = []
+    beg = end = args[0]
+
+    for n in args[1:] + [""]:
+        if n != end + 1:
+            if end == beg:
+                out.append(str(beg))
+            elif end == beg + 1:
+                out.extend([str(beg), str(end)])
+            else:
+                out.append(str(beg) + "-" + str(end))
+            beg = n
+        end = n
+    return ",".join(out)

@@ -52,6 +52,7 @@ def solution(ranges):
 
 
 ## CODEWARS RESOLUTION ##
+## CODEWARS RESOLUTION ##
 
 def solution(args):
     out = []

@@ -56,16 +56,16 @@ def solution(ranges):
 
 def solution(args):
     out = []
-    beg = end = args[0]
+    started = end = args[0]
 
     for n in args[1:] + [""]:
         if n != end + 1:
-            if end == beg:
-                out.append(str(beg))
-            elif end == beg + 1:
-                out.extend([str(beg), str(end)])
+            if end == started:
+                out.append(str(started))
+            elif end == started + 1:
+                out.extend([str(started), str(end)])
             else:
-                out.append(str(beg) + "-" + str(end))
-            beg = n
+                out.append(str(started) + "-" + str(end))
+            started = n
         end = n
     return ",".join(out)

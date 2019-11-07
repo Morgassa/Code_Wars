@@ -18,6 +18,3 @@ def thirt(n):
 
         soma = current_soma
         n = current_soma
-        
-print(6%6)
-print(thirt(178))

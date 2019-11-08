@@ -27,9 +27,22 @@ nb_year(1500000, 2.5, 10000, 2000000) -> 10
 Note: Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
 '''
 
+# p0 -> população inicial.
+# p -> Populaçõa alvo.
+# percent -> taxa de crescimento populacional ao ano.
+# aug -> novos moradores fora da taxa de crescimento
 
 def nb_year(p0, percent, aug, p):
-    pass
+    pn=0
+    n_anos=0
+
+    while pn < p:
+        pn = p0 + (p0 * (percent/100)) + aug
+        p0=pn
+        n_anos+=1
+
+    return (int(n_anos))
+    
 
 
 print((nb_year(1500, 5, 100, 5000)))

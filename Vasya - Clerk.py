@@ -21,6 +21,7 @@ def tickets(people):
     return "YES"
 
 # def tickets(people):
+
 #     caixa = {25:0, 50:0, 100:0}
 #     for money in people:
 #         if money == 25:

@@ -10,4 +10,5 @@ def get_sum(a,b):
     return sum(list)
 
 # def get_sum(a,b):
+# sdsd
 #     return sum(range(min(a, b), max(a, b) + 1))

@@ -17,7 +17,7 @@ def tickets(people):
             elif registradora[25] >=3:
                 registradora[25] -= 3
             else:
-                return 'NnO'
+                return 'NO'
     return "YES"
 
 # def tickets(people):

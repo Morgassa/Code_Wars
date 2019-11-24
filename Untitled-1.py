@@ -1,3 +1,4 @@
+# eae!
 def thirt(n):
     pattern = [1, 10, 9, 12, 3, 4]
     sum = 0

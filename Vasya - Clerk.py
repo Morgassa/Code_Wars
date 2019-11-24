@@ -20,6 +20,7 @@ def tickets(people):
                 return 'NO'
     return "YES"
 
+
 pagamentos = [25, 25, 25, 25, 100]
 
 print(tickets(pagamentos))

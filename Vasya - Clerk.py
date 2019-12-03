@@ -21,7 +21,7 @@ def tickets(people):
     return "YES"
 
 
-pagamentos = [25, 25, 25, 25, 100]
+pagamentos = [25, 25, 25, 25, 100, 50, 25, 25, 200]
 
 print(tickets(pagamentos))
 tickets(pagamentos)
